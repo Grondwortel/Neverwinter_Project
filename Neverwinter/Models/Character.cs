@@ -1,4 +1,6 @@
-﻿namespace Neverwinter.Models
+﻿using System.Data.Entity;
+
+namespace Neverwinter.Models
 {
     public class Character
     {
