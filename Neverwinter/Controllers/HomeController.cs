@@ -27,5 +27,17 @@ namespace Neverwinter.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            ViewBag.Message = "Login page";
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            ViewBag.Message = "Register page";
+            return View();
+        }
+
     }
 }
