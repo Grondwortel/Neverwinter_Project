@@ -1,112 +1,116 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using Neverwinter.Models;
 
 namespace Neverwinter.Controllers
 {
-    public class CharacterController : Controller
+    public class UsersController : Controller
     {
         private NeverwinterContext db = new NeverwinterContext();
 
-        // GET: Character
+        // GET: Users
         public ActionResult Index()
         {
-            return View(db.Characters.ToList());
+            return View(db.Users.ToList());
         }
 
-        // GET: Character/Details/5
+        // GET: Users/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Character character = db.Characters.Find(id);
-            if (character == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(character);
+            return View(user);
         }
 
-        // GET: Character/Add
-        public ActionResult Add()
+        // GET: Users/Create
+        public ActionResult Register()
         {
             return View();
         }
 
-        // POST: Character/Add
+        // POST: Users/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add([Bind(Include = "Id,Name,Race,Gender,Class")] Character character)
+        public ActionResult Register([Bind(Include = "Id,FirstName,Tussenvoegsel,SirName,Email,Username")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Characters.Add(character);
+                db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(character);
+            return View(user);
         }
 
-        // GET: Character/Edit/5
+        // GET: Users/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Character character = db.Characters.Find(id);
-            if (character == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(character);
+            return View(user);
         }
 
-        // POST: Character/Edit/5
+        // POST: Users/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Race,Gender,Class")] Character character)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,Tussenvoegsel,SirName,Email,Username")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(character).State = EntityState.Modified;
+                db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(character);
+            return View(user);
         }
 
-        // GET: Character/Delete/5
+        // GET: Users/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Character character = db.Characters.Find(id);
-            if (character == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(character);
+            return View(user);
         }
 
-        // POST: Character/Delete/5
+        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Character character = db.Characters.Find(id);
-            db.Characters.Remove(character);
+            User user = db.Users.Find(id);
+            db.Users.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
