@@ -9,7 +9,7 @@ namespace Neverwinter.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Neverwinter.Models.NeverwinterContext context)
