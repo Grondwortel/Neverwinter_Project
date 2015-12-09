@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "../Home/Register")
 </p>
 <table class="table">
     <tr>
@@ -15,16 +15,16 @@
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tussenvoegsel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SirName)
+            @Html.DisplayNameFor(model => model.SurName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
         </th>
         <th></th>
     </tr>
@@ -35,16 +35,16 @@
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Tussenvoegsel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SirName)
+            @Html.DisplayFor(modelItem => item.SurName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

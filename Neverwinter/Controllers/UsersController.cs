@@ -41,12 +41,18 @@ namespace Neverwinter.Controllers
             return View();
         }
 
-        // POST: Users/Create
+        // GET: Users/Create
+        public ActionResult Add()
+        {
+            return View();
+        }
+
+        // POST: Users/Add
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register([Bind(Include = "Id,FirstName,Tussenvoegsel,SirName,Email,Username")] User user)
+        public ActionResult Add([Bind(Include = "Id,FirstName,Surname,Email,Username,Password")] User user)
         {
             if (ModelState.IsValid)
             {
