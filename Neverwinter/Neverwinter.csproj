@@ -147,12 +147,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512081020133_user.cs" />
-    <Compile Include="Migrations\201512081020133_user.Designer.cs">
-      <DependentUpon>201512081020133_user.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\CharacterClass.cs" />
+    <Compile Include="Models\CharacterRace.cs" />
     <Compile Include="Models\NeverwinterContext.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -193,18 +191,17 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Character\Add.cshtml" />
-    <Content Include="Views\Character\Delete.cshtml" />
-    <Content Include="Views\Character\Details.cshtml" />
-    <Content Include="Views\Character\Edit.cshtml" />
-    <Content Include="Views\Character\Index.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Users\Add.cshtml" />
+    <Content Include="Views\Character\Create.cshtml" />
+    <Content Include="Views\Character\Delete.cshtml" />
+    <Content Include="Views\Character\Details.cshtml" />
+    <Content Include="Views\Character\Edit.cshtml" />
+    <Content Include="Views\Character\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -217,11 +214,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512081020133_user.resx">
-      <DependentUpon>201512081020133_user.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -31,18 +31,18 @@ namespace Neverwinter.Controllers
             return View(character);
         }
 
-        // GET: Character/Add
-        public ActionResult Add()
+        // GET: Character/Create
+        public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Character/Add
+        // POST: Character/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add([Bind(Include = "Id,Name,Race,Gender,Class")] Character character)
+        public ActionResult Create([Bind(Include = "Id,Account,Name,Gender,Race,Class,Strength,Constitution,Dexterity,Intelligence,Wisdom,Charisma,Health,Defense,Attack,Damage,Level,Experience")] Character character)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace Neverwinter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Race,Gender,Class")] Character character)
+        public ActionResult Edit([Bind(Include = "Id,Account,Name,Gender,Race,Class,Strength,Constitution,Dexterity,Intelligence,Wisdom,Charisma,Health,Defense,Attack,Damage,Level,Experience")] Character character)
         {
             if (ModelState.IsValid)
             {
