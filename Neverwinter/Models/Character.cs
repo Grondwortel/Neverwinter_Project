@@ -1,4 +1,6 @@
-﻿namespace Neverwinter.Models
+﻿using System.ComponentModel;
+
+namespace Neverwinter.Models
 {
     public class Character
     {
@@ -7,27 +9,39 @@
         public int Account { get; set; }
 
         //Basic Info
+        [DefaultValue("ENTER NAME HERE")]
         public string Name { get; set; }
+        [DefaultValue("Male")]
         public string Gender { get; set; }
+        [DefaultValue("Human")]
         public string Race { get; set; }
+        [DefaultValue("Knight")]
         public string Class { get; set; }
 
         //Attribute Info
-        public int Strength { get; set; }
-        public int Constitution { get; set; }
-        public int Dexterity { get; set; }
-        public int Intelligence { get; set; }
-        public int Wisdom { get; set; }
-        public int Charisma { get; set; }
+        [DefaultValue(0)]
+        public int Power { get; set; }
+        [DefaultValue(0)]
+        public int Toughness { get; set; }
+        [DefaultValue(0)]
+        public int Agility { get; set; }
+        [DefaultValue(0)]
+        public int Knowledge { get; set; }
 
         //Combat Info
+        [DefaultValue(0)]
         public int Health { get; set; }
+        [DefaultValue(0)]
         public int Defense { get; set; }
+        [DefaultValue(0)]
         public int Attack { get; set; }
+        [DefaultValue(0)]
         public int Damage { get; set; }
 
         //Extra Info
+        [DefaultValue(1)]
         public int Level { get; set; }
+        [DefaultValue(0)]
         public int Experience { get; set; }
     }
 }

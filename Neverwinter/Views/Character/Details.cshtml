@@ -10,14 +10,8 @@
     <h4>Character</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Account)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Account)
-        </dd>
-
+        <!-- Basic Info -->
+        <!-- Name -->
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -26,6 +20,7 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
 
+        <!-- Gender -->
         <dt>
             @Html.DisplayNameFor(model => model.Gender)
         </dt>
@@ -34,6 +29,7 @@
             @Html.DisplayFor(model => model.Gender)
         </dd>
 
+        <!-- Race -->
         <dt>
             @Html.DisplayNameFor(model => model.Race)
         </dt>
@@ -42,6 +38,7 @@
             @Html.DisplayFor(model => model.Race)
         </dd>
 
+        <!-- Class -->
         <dt>
             @Html.DisplayNameFor(model => model.Class)
         </dt>
@@ -50,86 +47,45 @@
             @Html.DisplayFor(model => model.Class)
         </dd>
 
+        <!-- Attribute Info -->
+        <!-- Power -->
         <dt>
-            @Html.DisplayNameFor(model => model.Strength)
+            @Html.DisplayNameFor(model => model.Power)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Strength)
+            @Html.DisplayFor(model => model.Power)
         </dd>
 
+        <!-- Thoughness -->
         <dt>
-            @Html.DisplayNameFor(model => model.Constitution)
+            @Html.DisplayNameFor(model => model.Toughness)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Constitution)
+            @Html.DisplayFor(model => model.Toughness)
         </dd>
 
+        <!-- Agility -->
         <dt>
-            @Html.DisplayNameFor(model => model.Dexterity)
+            @Html.DisplayNameFor(model => model.Agility)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Dexterity)
+            @Html.DisplayFor(model => model.Agility)
         </dd>
 
+        <!-- Knowledge -->
         <dt>
-            @Html.DisplayNameFor(model => model.Intelligence)
+            @Html.DisplayNameFor(model => model.Knowledge)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Intelligence)
+            @Html.DisplayFor(model => model.Knowledge)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Wisdom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Wisdom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Charisma)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Charisma)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Health)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Health)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Defense)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Defense)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Attack)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Attack)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Damage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Damage)
-        </dd>
-
+        <!-- Extra Info -->
+        <!-- Level -->
         <dt>
             @Html.DisplayNameFor(model => model.Level)
         </dt>
@@ -138,6 +94,7 @@
             @Html.DisplayFor(model => model.Level)
         </dd>
 
+        <!-- Experience -->
         <dt>
             @Html.DisplayNameFor(model => model.Experience)
         </dt>
@@ -149,6 +106,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

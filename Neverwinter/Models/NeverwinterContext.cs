@@ -20,6 +20,8 @@ namespace Neverwinter.Models
         }
 
         public System.Data.Entity.DbSet<Neverwinter.Models.Character> Characters { get; set; }
+        public System.Data.Entity.DbSet<Neverwinter.Models.Class> Classes { get; set; }
+        public System.Data.Entity.DbSet<Neverwinter.Models.Race> Races { get; set; }
         public System.Data.Entity.DbSet<Neverwinter.Models.User> Users { get; set; }
     }
 }

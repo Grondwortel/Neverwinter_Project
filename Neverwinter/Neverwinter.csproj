@@ -149,8 +149,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Character.cs" />
-    <Compile Include="Models\CharacterClass.cs" />
-    <Compile Include="Models\CharacterRace.cs" />
+    <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\Race.cs" />
     <Compile Include="Models\NeverwinterContext.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,7 +195,6 @@
     <Content Include="Views\Character\Create.cshtml" />
     <Content Include="Views\Character\Delete.cshtml" />
     <Content Include="Views\Character\Details.cshtml" />
-    <Content Include="Views\Character\Edit.cshtml" />
     <Content Include="Views\Character\Index.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
