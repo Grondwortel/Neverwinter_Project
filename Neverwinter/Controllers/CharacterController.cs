@@ -2,6 +2,8 @@
 using System.Net;
 using System.Web.Mvc;
 using Neverwinter.Models;
+using System.Collections.Generic;
+using System;
 
 namespace Neverwinter.Controllers
 {
@@ -33,6 +35,23 @@ namespace Neverwinter.Controllers
         // GET: Character/Create
         public ActionResult Create()
         {
+            // Races List
+            ViewBag.Races = (from race in db.Races
+                              select new SelectListItem
+                              {
+                                  Text = race.Name,
+                                  Value = race.Name
+                              }
+                  ).ToList();
+
+            // Classes List
+            ViewBag.Classes = (from Class in db.Classes
+                               select new SelectListItem
+                               {
+                                   Text = Class.Name,
+                                   Value = Class.Name
+                             }
+                  ).ToList();
             return View();
         }
 

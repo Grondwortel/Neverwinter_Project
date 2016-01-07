@@ -1,5 +1,4 @@
 ﻿@model Neverwinter.Models.Character
-
 @{
     ViewBag.Title = "Create";
 }
@@ -30,8 +29,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                <select>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
             </div>
         </div>
 
@@ -39,8 +40,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Race, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Race, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Race, "", new { @class = "text-danger" })
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.Race, (IList<SelectListItem>)ViewBag.Races)
+                </div>
             </div>
         </div>
 
@@ -48,8 +50,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Class, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Class, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Class, "", new { @class = "text-danger" })
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.Class, (IList<SelectListItem>)ViewBag.Classes)
+                </div>
             </div>
         </div>
 

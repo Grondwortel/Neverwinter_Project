@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 
 namespace Neverwinter.Models
 {
@@ -13,8 +14,12 @@ namespace Neverwinter.Models
         public string Avatar { get; set; }
 
         //Account Info
+        
         public string Email { get; set; }
-        public string Password { get; set; }
+        [Required]
         public string Username { get; set; }
+        [Required]
+        public string Password { get; set; }
+       
     }
 }
