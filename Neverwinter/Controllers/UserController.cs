@@ -54,6 +54,46 @@ namespace Neverwinter.Controllers
             return View(user);
         }
 
+        //Login
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(User users)
+        {
+            using (NeverwinterContext db = new NeverwinterContext())
+            {
+                var usr = db.Users.Where(u => u.Username == users.Username && u.Password == users.Password).FirstOrDefault();
+                if (usr != null)
+                {
+                    
+                    Session["Username"] = usr.Username.ToString();
+                    return RedirectToAction("Logged In");
+
+                }
+
+            }
+            return View();
+        }
+
+        public ActionResult LoggedIn()
+        {
+            if (Session["UserId"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+
+    
+    
+        
+
         // GET: User/Edit/5
         public ActionResult Edit(int? id)
         {
