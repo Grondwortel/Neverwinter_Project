@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 
+
 namespace Neverwinter.Models
 {
     public class User
@@ -19,6 +20,7 @@ namespace Neverwinter.Models
         [Required]
         public string Username { get; set; }
         [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
        
     }
