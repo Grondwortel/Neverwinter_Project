@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace Neverwinter.Models
 {
@@ -20,7 +16,8 @@ namespace Neverwinter.Models
         }
 
         public System.Data.Entity.DbSet<Neverwinter.Models.Character> Characters { get; set; }
-        public System.Data.Entity.DbSet<Neverwinter.Models.Class> Classes { get; set; }
+        public System.Data.Entity.DbSet<Neverwinter.Models.Gender> Genders { get; set; }
+        public System.Data.Entity.DbSet<Neverwinter.Models.Profession> Professions { get; set; }
         public System.Data.Entity.DbSet<Neverwinter.Models.Race> Races { get; set; }
         public System.Data.Entity.DbSet<Neverwinter.Models.User> Users { get; set; }
     }
