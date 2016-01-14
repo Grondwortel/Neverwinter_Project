@@ -24,11 +24,16 @@ namespace Neverwinter.Migrations
             //    );
             //
 
-            context.Classes.AddOrUpdate( x => x.Id,
-                new Models.Class() { Id = 1, Name = "Barbarian", Bonus = 5 },
-                new Models.Class() { Id = 2, Name = "Knight", Bonus = 10 },
-                new Models.Class() { Id = 3, Name = "Paladin", Bonus = 15 },
-                new Models.Class() { Id = 4, Name = "Rogue", Bonus = 20 }
+            context.Genders.AddOrUpdate(x => x.Id,
+                new Models.Gender() { Id = 1, Name = "Male", Bonus = 5 },
+                new Models.Gender() { Id = 2, Name = "Female", Bonus = 10 }
+            );
+
+            context.Professions.AddOrUpdate(x => x.Id,
+                new Models.Profession() { Id = 1, Name = "Barbarian", Bonus = 5 },
+                new Models.Profession() { Id = 2, Name = "Knight", Bonus = 10 },
+                new Models.Profession() { Id = 3, Name = "Paladin", Bonus = 15 },
+                new Models.Profession() { Id = 4, Name = "Rogue", Bonus = 20 }
             );
 
             context.Races.AddOrUpdate(x => x.Id,

@@ -2,8 +2,8 @@
 using System.Net;
 using System.Web.Mvc;
 using Neverwinter.Models;
+using System.Data.Entity;
 using System.Collections.Generic;
-using System;
 
 namespace Neverwinter.Controllers
 {
@@ -14,7 +14,11 @@ namespace Neverwinter.Controllers
         // GET: Character
         public ActionResult Index()
         {
-            return View(db.Characters.ToList());
+            using (var context = new NeverwinterContext())
+            {
+                var characters = context.Characters.ToList();
+                return View(characters);
+            }
         }
 
         // GET: Character/Details/5
@@ -24,7 +28,8 @@ namespace Neverwinter.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Character character = db.Characters.Find(id);
+            var character = db.Characters.Where(c => c.Id == id).FirstOrDefault();
+            
             if (character == null)
             {
                 return HttpNotFound();
@@ -35,23 +40,33 @@ namespace Neverwinter.Controllers
         // GET: Character/Create
         public ActionResult Create()
         {
-            // Races List
-            ViewBag.Races = (from race in db.Races
+            // Race List
+            ViewBag.RaceList = (from race in db.Races
                               select new SelectListItem
                               {
                                   Text = race.Name,
-                                  Value = race.Name
+                                  Value = race.Id.ToString()
                               }
                   ).ToList();
 
-            // Classes List
-            ViewBag.Classes = (from Class in db.Classes
-                               select new SelectListItem
+            // Profession List
+            ViewBag.ProfessionList = (from profession in db.Professions
+                                   select new SelectListItem
                                {
-                                   Text = Class.Name,
-                                   Value = Class.Name
+                                   Text = profession.Name,
+                                   Value = profession.Id.ToString()
                              }
                   ).ToList();
+
+            // Gender List
+            ViewBag.GenderList = (from gender in db.Genders
+                                      select new SelectListItem
+                                      {
+                                          Text = gender.Name,
+                                          Value = gender.Id.ToString()
+                                      }
+                  ).ToList();
+
             return View();
         }
 
@@ -60,7 +75,7 @@ namespace Neverwinter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Account,Name,Gender,Race,Class,Strength,Constitution,Dexterity,Intelligence,Wisdom,Charisma,Health,Defense,Attack,Damage,Level,Experience")] Character character)
+        public ActionResult Create([Bind(Include = "Id,Name,Gender,Account,Health,Defense,Attack,Damage,Level,Experience,Power,Toughness,Agility,Knowledge,Profession,Race")] Character character)
         {
             if (ModelState.IsValid)
             {
