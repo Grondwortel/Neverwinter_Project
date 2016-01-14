@@ -86,7 +86,7 @@ namespace Neverwinter.Controllers
             }
             else
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("../character/index");
             }
         }
 

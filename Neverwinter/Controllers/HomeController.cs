@@ -8,6 +8,12 @@ namespace Neverwinter.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpPost]
+        public ActionResult DoLogin()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -32,5 +38,6 @@ namespace Neverwinter.Controllers
             ViewBag.Message = "Login page";
             return View();
         }
+
     }
 }
