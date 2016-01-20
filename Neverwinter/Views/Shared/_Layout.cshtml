@@ -24,8 +24,10 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Character Creation ", "Index", "Character")</li>
                     <li>@Html.ActionLink("Register", "Create", "User")</li>
+                    @if (Session ["UserName"] == null)
+                    {
                     <li>@Html.ActionLink("Login", "Login", "User")</li>
-                    
+                    } 
                 </ul>
             </div>
         </div>

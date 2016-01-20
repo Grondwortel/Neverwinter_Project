@@ -9,7 +9,8 @@
     <p>@Html.ActionLink("Learn More >>", "About", "Home")</p>
     <p>@Html.ActionLink("Register on this page >>", "Create", "User")</p>
 </div>
-
+@if (Session["Username"] == null)
+{
 <form method="post" action="@Url.Action("Login", "User")">
     
     @Html.AntiForgeryToken()
@@ -41,7 +42,7 @@
         </div>
     </div>
     </form>
-
+}
     <div class="row">
         <div class="col-md-4">
             <h2>Getting started</h2>
