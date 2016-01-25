@@ -70,7 +70,8 @@ namespace Neverwinter.Controllers
                 {
                     
                     Session["Username"] = usr.Username.ToString();
-                    return RedirectToAction("Logged In");
+                    Session["Password"] = usr.Password.ToString();
+                    return RedirectToAction("Index", "Home");
 
                 }
 
