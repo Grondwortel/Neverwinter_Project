@@ -21,6 +21,7 @@ namespace Neverwinter.Controllers
 
         public ActionResult About()
         {
+
             ViewBag.Message = "Short description of the Project:";
 
             return View();
@@ -39,5 +40,8 @@ namespace Neverwinter.Controllers
             return View();
         }
 
+
     }
 }
+
+

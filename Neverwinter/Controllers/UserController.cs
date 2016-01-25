@@ -48,7 +48,7 @@ namespace Neverwinter.Controllers
             {
                 db.Users.Add(user);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(user);
@@ -91,7 +91,18 @@ namespace Neverwinter.Controllers
             }
         }
 
-    
+         public ActionResult LoggedOut()
+        {
+            if(Session["UserId"] != null)
+            {
+                return View();
+            }
+            else
+            {
+
+                return RedirectToAction("Index", "Home");
+            }
+        }
     
         
 
