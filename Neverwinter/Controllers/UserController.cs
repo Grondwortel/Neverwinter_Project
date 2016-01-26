@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Neverwinter.Models;
+using System.Web.Security;
 
 namespace Neverwinter.Controllers
 {
@@ -74,37 +75,49 @@ namespace Neverwinter.Controllers
                     return RedirectToAction("Index", "Home");
 
                 }
-
+                else
+                {
+                        
+                    return RedirectToAction("Index", "Home");
+                }
             }
-            return View();
         }
 
-        public ActionResult LoggedIn()
+        public ActionResult LogOff(User users)
         {
-            if (Session["UserId"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
         }
 
-         public ActionResult LoggedOut()
-        {
-            if(Session["UserId"] != null)
-            {
-                return View();
-            }
-            else
-            {
 
-                return RedirectToAction("Index", "Home");
-            }
-        }
-    
-        
+
+        //public ActionResult LoggedIn()
+        //{
+        //    if (Session["Username"] != null)
+        //    {
+        //        return View();
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //}
+
+        // public ActionResult LoggedOut()
+        //{
+        //    if(Session["Username"] != null)
+        //    {
+        //        return View();
+        //    }
+        //    else
+        //    {
+        //        Session.Clear();
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //}
+
+
 
         // GET: User/Edit/5
         public ActionResult Edit(int? id)
