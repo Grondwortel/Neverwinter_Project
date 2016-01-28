@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Neverwinter.Models.User>
+﻿@*@model IEnumerable<Neverwinter.Models.User>*@
 
 <!DOCTYPE html>
 <html>
@@ -30,15 +30,15 @@
                         <li>@Html.ActionLink("Login", "Login", "User")</li>
                     }
                     <li>@Html.ActionLink("Character Creation ", "Index", "Character")</li>
-                    <li>@Html.ActionLink("User Details", "../User", "User")</li>
                 </ul>
+                
                     @if (Session["Username"] != null)
-                    {
-                        <ul>
-                            <li class="loginname">Welcome: @Session["Username"]</li>
-
+                    {                                    
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Hello, " + Session["Username"], "../User/details/" + Session["Id"], "User")</li>
                             <li>@Html.ActionLink("LogOff", "LogOff", "User")</li>
                         </ul>
+                        
                     }
                 
                 

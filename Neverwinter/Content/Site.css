@@ -24,6 +24,11 @@ textarea {
 }
 
 li.loginname{
-    display: normal;
     color: red;
+    padding-top: 15px;
+}
+@media only screen and (max-device-width: 480px){
+    li.loginname{
+        margin-left: 15px;
+    }
 }

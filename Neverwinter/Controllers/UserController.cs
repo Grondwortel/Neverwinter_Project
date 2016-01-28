@@ -69,6 +69,7 @@ namespace Neverwinter.Controllers
                 var usr = db.Users.Where(u => u.Username == users.Username && u.Password == users.Password).FirstOrDefault();
                 if (usr != null)
                 {
+                    Session["Id"] = usr.Id.ToString();
                     Session["Username"] = usr.Username.ToString();
                     Session["Password"] = usr.Password.ToString();
                     return RedirectToAction("Index", "Home");
